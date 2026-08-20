@@ -1,0 +1,15 @@
+# 前端
+node_modules/
+dist/
+.vite/
+*.local
+
+# 后端
+target/
+*.iml
+*.log
+
+# IDE
+.idea/
+.claude/
+.DS_Store
