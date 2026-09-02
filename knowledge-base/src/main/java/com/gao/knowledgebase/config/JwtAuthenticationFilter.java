@@ -43,6 +43,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             SecurityContextHolder.getContext().setAuthentication(auth);
         }catch (Exception e){
             //token无效 不做任何处理
+            response.sendError(HttpServletResponse.SC_UNAUTHORIZED,e.getMessage());
+            return;
         }
         //5.继续执行后续过滤器
         chain.doFilter(request,response);
