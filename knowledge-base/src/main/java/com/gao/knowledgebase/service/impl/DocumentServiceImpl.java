@@ -6,7 +6,10 @@ import com.gao.knowledgebase.mapper.DocumentMapper;
 import com.gao.knowledgebase.service.DocumentService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DocumentServiceImpl extends ServiceImpl<DocumentMapper, Document>implements DocumentService {
+
 
 }
