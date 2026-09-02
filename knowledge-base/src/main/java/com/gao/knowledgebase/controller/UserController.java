@@ -12,6 +12,8 @@ import com.gao.knowledgebase.utils.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
@@ -47,7 +49,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public Result<String> login(@RequestBody LoginRequest loginRequest) {
+    public Result<String> login(@Valid @RequestBody LoginRequest loginRequest) {
         User uesr = userService.lambdaQuery()
                 .eq(User::getUsername, loginRequest.getUsername())
                 .one();

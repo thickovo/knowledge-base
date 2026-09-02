@@ -11,6 +11,8 @@ import com.gao.knowledgebase.service.DocumentTagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 import java.util.Collections;
 
 
@@ -27,7 +29,7 @@ public class DocumentController {
     private DocumentTagService documentTagService;
 
     @PostMapping("/create")
-    public Result<String> createDocument(@RequestBody DocumentCreateRequest
+    public Result<String> createDocument(@Valid @RequestBody DocumentCreateRequest
             request){
         String username = SecurityContextHolder
                 .getContext()

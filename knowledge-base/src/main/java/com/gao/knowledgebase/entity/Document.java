@@ -1,5 +1,7 @@
 package com.gao.knowledgebase.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.time.LocalDateTime;
@@ -13,6 +15,19 @@ public class Document {
     private String userId;
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
+
+    @TableLogic  //这个字段是逻辑删除标记
+    //调用时MP会自动执行UPDATE XX SET deleted = 1 WHERE id = ?
+    //而不是DELETED FROM document WHERE id = ?
+    private Integer deleted;
+
+    public Integer getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(Integer deleted) {
+        this.deleted = deleted;
+    }
 
     public Long getId() {
         return id;

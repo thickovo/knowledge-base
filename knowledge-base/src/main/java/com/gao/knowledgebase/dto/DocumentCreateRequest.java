@@ -1,9 +1,13 @@
 package com.gao.knowledgebase.dto;
 
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 public class DocumentCreateRequest {
+
+    @NotBlank(message = "标题不能为空")
     private String title;
+    @NotBlank(message = "内容不能为空")
     private String content;
     private Long parentId;
     private List<Long> tagIds;

@@ -41,7 +41,7 @@ public class Result<T> {
     }
 
     public static <T> Result<T> error(String msg) {
-        Result<T> result = new Result<>(500,"error",null);
+        Result<T> result = new Result<>(0,msg,null);
         return result;
     }
 
