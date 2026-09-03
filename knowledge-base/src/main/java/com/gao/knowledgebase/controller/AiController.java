@@ -15,6 +15,10 @@ public class AiController {
 
     @GetMapping("/api/ai")
     public Result ceshi(@RequestParam String message) throws Exception {
+        if (message == null || message.trim().isEmpty()) {
+            return Result.error("消息不能为空");
+        }
+
         aiService.chat(message);
         return Result.success(aiService.chat(message));
     }

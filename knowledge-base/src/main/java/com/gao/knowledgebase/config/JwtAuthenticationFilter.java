@@ -3,6 +3,7 @@ package com.gao.knowledgebase.config;
 import com.gao.knowledgebase.utils.JwtUtils;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
+@Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
     //注入 JwtUtils
     private final JwtUtils jwtUtils;
