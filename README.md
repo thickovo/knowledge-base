@@ -1,11 +1,11 @@
-```
-<div align="center">
 # 知识库管理系统
+
 一个支持登录注册、文档管理（无限级目录树 / 全文搜索 / 标签筛选）、标签管理及 AI 智能查询的全栈项目。
 
-</div>
----
+------
+
 ## 功能特性
+
 - **认证授权**：基于 JWT + Spring Security，Token 写入 Redis 实现登录态管理
 - **文档管理**：无限级目录树，支持文档层级嵌套
 - **标签系统**：文档与标签多对多关联，灵活分类
@@ -14,39 +14,46 @@
 - **前后端分离**：Vue 3 单页应用，RESTful 接口对接
 - **接口自动化测试**：Python + Pytest + Requests 完成核心接口测试覆盖
 
----
+------
+
 ## 技术栈
+
 ### 后端
-| 技术              | 版本     |
-| ----------------- | -------- |
-| Spring Boot       | 2.7.6    |
-| Spring Security   | 5.x      |
-| MyBatis‑Plus      | 3.5.9    |
-| JWT (jjwt)        | 0.11.x   |
-| Redis             | 5+       |
-| MySQL             | 8.0      |
-| 硅基流动 API      | Function Calling |
-| JDK               | 8+（推荐 17） |
+
+| 技术            | 版本             |
+| --------------- | ---------------- |
+| Spring Boot     | 2.7.6            |
+| Spring Security | 5.x              |
+| MyBatis‑Plus    | 3.5.9            |
+| JWT (jjwt)      | 0.11.x           |
+| Redis           | 5+               |
+| MySQL           | 8.0              |
+| 硅基流动 API    | Function Calling |
+| JDK             | 8+（推荐 17）    |
 
 ### 前端
-| 技术          | 说明                  |
-| ------------- | --------------------- |
-| Vue 3         | Composition API       |
-| Element Plus  | UI 组件库             |
-| Vue Router 4  | 路由 + 鉴权守卫       |
-| Axios         | HTTP 请求封装         |
-| Vite          | 构建工具              |
+
+| 技术         | 说明            |
+| ------------ | --------------- |
+| Vue 3        | Composition API |
+| Element Plus | UI 组件库       |
+| Vue Router 4 | 路由 + 鉴权守卫 |
+| Axios        | HTTP 请求封装   |
+| Vite         | 构建工具        |
 
 ### 测试
-| 工具 | 说明 |
-|------|------|
-| Python | 脚本运行环境 |
-| Pytest | 测试框架 |
-| Requests | HTTP 请求库 |
 
----
+| 工具     | 说明         |
+| -------- | ------------ |
+| Python   | 脚本运行环境 |
+| Pytest   | 测试框架     |
+| Requests | HTTP 请求库  |
+
+------
+
 ## 项目结构
-```text
+
+```
 knowledge-base-project/
 ├── knowledge-base/                              # Spring Boot 后端
 │   ├── src/main/java/com/gao/knowledgebase/
@@ -262,12 +269,10 @@ pytest test_api.py -v
 ## AI 辅助开发说明
 
 - 前端 Vue 3 代码由 **Claude 3.5 Sonnet** 辅助生成，作者在其基础上完成了接口适配、路由配置和样式调整。
-
 - 后端 Spring Boot 代码由作者**独立手写完成**，包括：数据库设计、接口开发、JWT 认证、权限控制、目录树、标签系统、全文搜索、AI 智能查询（Function Calling）。
-
 - 前后端联调由作者独立完成。
 
-  > 该模式用于在实际工作中合理利用 AI 工具提升前端开发效率，同时保证后端核心逻辑的稳定性与可控性。
+> 该模式用于在实际工作中合理利用 AI 工具提升前端开发效率，同时保证后端核心逻辑的稳定性与可控性。
 
 ------
 
